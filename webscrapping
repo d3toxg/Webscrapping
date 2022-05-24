@@ -1,0 +1,11 @@
+For this lab, we are going to be using Python and several Python libraries. 
+Some of these libraries might be installed in your lab environment or in SN Labs. 
+Others may need to be installed by you. 
+The cells below will install these libraries when executed.
+
+Python codes begin
+
+!mamba install bs4==4.10.0 -y
+!pip install lxml==4.6.4
+!mamba install html5lib==1.1 -y
+# !pip install requests==2.26.0
