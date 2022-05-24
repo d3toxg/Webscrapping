@@ -1,11 +1,51 @@
-For this lab, we are going to be using Python and several Python libraries. 
+<p>For this lab, we are going to be using Python and several Python libraries. 
 Some of these libraries might be installed in your lab environment or in SN Labs. 
 Others may need to be installed by you. 
-The cells below will install these libraries when executed.
+The cells below will install these libraries when executed.</p>
 
-Python codes begin
+<h1>Python codes begin</h1>
 
 !mamba install bs4==4.10.0 -y
 !pip install lxml==4.6.4
 !mamba install html5lib==1.1 -y
 # !pip install requests==2.26.0
+
+<h1>Now we would Import the required modules and functions.</h1>
+
+from bs4 import BeautifulSoup # this module helps in web scrapping.
+import requests  # this module helps us to download a web page
+
+<h1>Beautiful Soup Objects</h1>
+Beautiful Soup is a Python library for pulling data out of HTML and XML files, we will focus on HTML files. This is accomplished by representing the HTML as a set of objects with methods used to parse the HTML. We can navigate the HTML as a tree and/or filter out what we are looking for.
+
+Consider the following HTML:
+
+%%html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<h3><b id='boldest'>Lebron James</b></h3>
+<p> Salary: $ 92,000,000 </p>
+<h3> Stephen Curry</h3>
+<p> Salary: $85,000, 000 </p>
+<h3> Kevin Durant </h3>
+<p> Salary: $73,200, 000</p>
+</body>
+</html>
+
+Lebron James
+Salary: $ 92,000,000
+
+Stephen Curry
+Salary: $85,000, 000
+
+Kevin Durant
+Salary: $73,200, 000
+
+We can store it as a string in the variable HTML:
+html="<!DOCTYPE html><html><head><title>Page Title</title></head><body><h3><b id='boldest'>Lebron James</b></h3><p> Salary: $ 92,000,000 </p><h3> Stephen Curry</h3><p> Salary: $85,000, 000 </p><h3> Kevin Durant </h3><p> Salary: $73,200, 000</p></body></html>"
+
+To parse a document, pass it into the BeautifulSoup constructor, the BeautifulSoup object, which represents the document as a nested data structure:
